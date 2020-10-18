@@ -3,7 +3,7 @@ This repo contains the installation guide and EFI files required to get a perfec
 
 **This guide is not for models with Haswell 4th gen CPU**
 
-![img](https://img.shields.io/github/last-commit/racka98/Lenovo-Thinkpad-T450-Hackintosh-Guide-Catalina-with-Opencore.svg?color=green&label=last-commit) ![img](https://img.shields.io/badge/macOS%20support-Catalina--10.15.7-blue) ![img](https://img.shields.io/badge/Opencore%20version-0.6.2-red)
+![img](https://img.shields.io/github/last-commit/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Catalina-with-Opencore.svg?color=green&label=last-commit) ![img](https://img.shields.io/badge/macOS%20support-Catalina--10.15.7-blue) ![img](https://img.shields.io/badge/Opencore%20version-0.6.2-red)
 
 ![About Mac Big Sur](https://imgur.com/xAIkJh0.png)
 
@@ -16,7 +16,7 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 - `Sound Card`: **ALC292**
 - `Wireless Cards Tested`: **DW1820A 00JT494/Broadcom BCM94360CSAX/Intel 7265/7260**
 
-## Bios
+# Bios
 
 - `Security -> Security Chip`: **Disabled**;
 - `Memory Protection -> Execution Prevention`: **Enabled**;
@@ -30,7 +30,7 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 - `Fingerprint Sensor`: **Disabled** `(Causes issues with wake from sleep)`;
 - `CSM Support`: **Yes**.
 
-## What works
+# What works
 
 - Sleep / Wake
 - Wifi and Bluetooth (Built-in Intel 7265 or 7260 cards with Heliport + itlwm.kext) **Airportitlwm.kext is not recommended, it causes issues with Trackpad after wake from sleep**
@@ -48,7 +48,7 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 - Use [one-key-hidpi](https://github.com/xzhih/one-key-hidpi) to enable HiDPI
 - If you are using a usb mouse with side buttons, you can spoof apple usb mouse by change the pid and vid in AnyAppleUSBMouse.kext/Info.plist and enable it in config.plist.
 
-## What doesn't work
+# What doesn't work
 
 - VGA
 - Sidecar (Wired Sidecar works but only in Macbook9,1 SMBIOS, which has bad battery life, you can choose what you want)
@@ -56,6 +56,6 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 
 ## Note: If you need to edit config.plist, don't use OpenCore configurator or Clover configurator, use PlistEdit pro (Included in Utilities) or Xcode.
 
-## Installation Guide
+# Installation Guide
 
 **COMING SOON**
