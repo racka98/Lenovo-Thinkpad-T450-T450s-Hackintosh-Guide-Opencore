@@ -1,13 +1,12 @@
 # Lenovo Thinkpad T450 & T450s Hackintosh Guide for Catalina with Opencore
 This repo contains the installation guide and EFI files required to get a perfectly functional Catalina 10.15.7 hackintosh on your T450 or T450s since they share the same hardware. Everything is stable and functional as described in this Readme. 
 
-**This guide is not for models with Haswell 4th gen CPU**
+## A few worthy mentions about this repo:**
 
-**The EFI folder and the patched ACPI were first created by [EchoEspirit](https://github.com/EchoEsprit/Hackintosh-Catalina-OpenCore-Lenovo-T450s-efi) and futher optimized by [i3p9](https://github.com/i3p9/Hackintosh-Catalina-OpenCore-Lenovo-T450s-efi). I tweaked a couple of things and fixed some errors that were happening on T450 + added Intel WiFi drivers from [Openintelwireless](https://github.com/OpenIntelWireless)**
-
-**I will try my best to keep the repo updated with the latest kexts and Opencore version**
-
-**This EFI works with Big Sur Beta 9 but compatibility with future versions is not guaranteed until i update the kexts and Opencore version that will support the latest version of Big Sur**
+- **This guide is not for models with Haswell 4th gen CPU**
+- **The EFI folder and the patched ACPI were first created by [EchoEspirit](https://github.com/EchoEsprit/Hackintosh-Catalina-OpenCore-Lenovo-T450s-efi) and futher optimized by [i3p9](https://github.com/i3p9/Hackintosh-Catalina-OpenCore-Lenovo-T450s-efi). I tweaked a couple of things and fixed some errors that were happening on T450 + added Intel WiFi drivers from [Openintelwireless](https://github.com/OpenIntelWireless)**
+- **I will try my best to keep the repo updated with the latest kexts and Opencore version**
+- **This EFI works with Big Sur Beta 9 but compatibility with future versions is not guaranteed until i update the kexts and Opencore version that will support the latest version of Big Sur**
 
 ![img](https://img.shields.io/github/last-commit/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Catalina-with-Opencore.svg?color=green&label=last-commit) ![img](https://img.shields.io/badge/macOS%20support-Catalina--10.15.7-blue) ![img](https://img.shields.io/badge/Opencore%20version-0.6.2-red)
 
