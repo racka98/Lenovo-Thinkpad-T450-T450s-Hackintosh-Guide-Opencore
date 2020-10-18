@@ -7,7 +7,7 @@ This repo contains the installation guide and EFI files required to get a perfec
 
 ![About Mac Big Sur](https://imgur.com/xAIkJh0.png)
 
-## Introduction
+# Introduction
 
 EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 
