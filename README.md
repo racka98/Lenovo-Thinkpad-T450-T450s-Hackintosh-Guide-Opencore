@@ -1,7 +1,7 @@
 # Lenovo Thinkpad T450 & T450s Hackintosh Guide for Catalina with Opencore
 This repo contains the installation guide and EFI files required to get a perfectly functional Catalina 10.15.7 hackintosh on your T450 or T450s since they share the same hardware. Everything is stable and functional as described in this Readme. 
 
-## A few worthy mentions about this repo**:
+## A few worthy mentions about this repo:
 
 - **This guide is not for models with Haswell 4th gen CPU**
 - **The EFI folder and the patched ACPI were first created by [EchoEspirit](https://github.com/EchoEsprit/Hackintosh-Catalina-OpenCore-Lenovo-T450s-efi) and futher optimized by [i3p9](https://github.com/i3p9/Hackintosh-Catalina-OpenCore-Lenovo-T450s-efi). I tweaked a couple of things and fixed some errors that were happening on T450 + added Intel WiFi drivers from [Openintelwireless](https://github.com/OpenIntelWireless)**
