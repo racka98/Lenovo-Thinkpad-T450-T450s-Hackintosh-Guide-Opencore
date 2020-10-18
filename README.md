@@ -5,54 +5,58 @@ This repo contains the installation guide and EFI files required to get a perfec
 
 ![About Mac Big Sur](https://imgur.com/xAIkJh0.png)
 
-
-Original Readme from Echo: 
-# Thinkpad T450s Catalina
-
-## Notice: If you need to edit config.plist, don't use OpenCore configurator, use PlistEdit pro or Xcode instead.
-
 ## Introduction
 
-efi for Thinkpad T450s (20BXCT01WW) Hackintosh Catalina.
+EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 
-CPU: i5-5200U
+Tested CPUs: i5-5200U/5300u & i7-5600u
 
 Integrated Graphics: HD Graphics 5500
 
 Sound Card: ALC292
 
-Wireless Card: **DW1820A 00JT494** 
+Wireless Cards Tested: **DW1820A 00JT494/Broadcom BCM94360CSAX/Intel 7265/7260** 
 
 ## Bios
 
 - `Security -> Security Chip`: **Disabled**;
 - `Memory Protection -> Execution Prevention`: **Enabled**;
 - `Virtualization -> Intel Virtualization Technology`: **Enabled**;
+- `Virtualization -> Vt-directed IO`: **Disabled**;
 - `Internal Device Access -> Bottom Cover Tamper Detection`: must be **Disabled**;
 - `Anti-Theft -> Current Setting`: **Disabled**;
 - `Anti-Theft -> Computrace -> Current Setting`: **Disabled**;
 - `Secure Boot -> Secure Boot`: **Disabled**;
 - `UEFI/Legacy Boot`: **UEFI Only**;
+- `Fingerprint Sensor`: **Disabled** `(Causes issues with wake from sleep)`;
 - `CSM Support`: **Yes**.
 
 ## What works
 
 - Sleep / Wake
-- Wifi and Bluetooth (DW1820A)
+- Wifi and Bluetooth (Built-in Intel 7265 or 7260 cards with Heliport + itlwm.kext) **Airportitlwm.kext is not recommended, it causes issues with Trackpad after wake from sleep**
+- AirPort Extreme (Broadcom BCM94360CSAX & NGFF A/E Adapter) **Recommended Upgrade to get native WiFi & Bluetooth**
 - Handoff, Continuity, AirDrop
 - iMessage, FaceTime, App Store, iTunes Store (Change Config.plist -> PlatformInfo -> Generic -> MLB and SystemSerialNumber)
 - Ethernet
 - Onboard audio (Use alc_fix to fix unworking jack after replug )
 - USB 2.0 / USB 3.0
-- Battery
+- Dual Batteries
 - Touchpad
-- Redpoint
+- Trackpoint
 - miniDP
 - SD Card Reader (Thanks to @willmav5000)
-- Use [one-key-hidpi](https://github.com/daliansky/XiaoMi-Pro-Hackintosh/blob/master/one-key-hidpi) to enable HiDPI
+- Use [one-key-hidpi](https://github.com/xzhih/one-key-hidpi) to enable HiDPI
 - If you are using a usb mouse with side buttons, you can spoof apple usb mouse by change the pid and vid in AnyAppleUSBMouse.kext/Info.plist and enable it in config.plist.
 
 ## What doesn't work
 
 - VGA
 - Sidecar (Wired Sidecar works but only in Macbook9,1 SMBIOS, which has bad battery life, you can choose what you want)
+- With the IntelBluetoothFirmware.kext and itlwm.kext enabled Bluetooth headphones only work when you are not connected to any wifi network or turn off wifi. This is a known issue with 7265 and 7260 cards. You can get 8x series cards to fix this or buy the recomended cards (DW1820A 00JT494 or Broadcom BCM94360CSAX)
+
+## Note: If you need to edit config.plist, don't use OpenCore configurator or Clover configurator, use PlistEdit pro (Included in Utilities) or Xcode.
+
+## Installation Guide
+
+**COMING SOON**
