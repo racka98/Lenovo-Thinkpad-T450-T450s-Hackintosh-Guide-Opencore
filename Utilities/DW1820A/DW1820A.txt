@@ -1,0 +1,4 @@
+DW1820A:    00JT494 (Lenovo)
+WiFi:       pci14e4,43a3
+bluetooth:  0a5c:6414
+
