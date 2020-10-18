@@ -1,5 +1,7 @@
 # Lenovo Thinkpad T450 & T450s Hackintosh Guide for Catalina with Opencore
-This repo contains the installation guide and EFI files required to get a perfectly functional Catalina 10.15.7 hackintosh on your T450. Everything is stable and functional as described in this Readme
+This repo contains the installation guide and EFI files required to get a perfectly functional Catalina 10.15.7 hackintosh on your T450 or T450s since they share the same hardware. Everything is stable and functional as described in this Readme. 
+
+**This guide is not for models with Haswell 4th gen CPU**
 
 ![img](https://img.shields.io/github/last-commit/racka98/Lenovo-Thinkpad-T450-Hackintosh-Guide-Catalina-with-Opencore.svg?color=green&label=last-commit) ![img](https://img.shields.io/badge/macOS%20support-Catalina--10.15.7-blue) ![img](https://img.shields.io/badge/Opencore%20version-0.6.2-red)
 
@@ -9,13 +11,10 @@ This repo contains the installation guide and EFI files required to get a perfec
 
 EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 
-- `Tested CPUs: i5-5200U/5300u & i7-5600u`
-
-- `Integrated Graphics: HD Graphics 5500`
-
-- `Sound Card: ALC292`
-
-- `Wireless Cards Tested: **DW1820A 00JT494/Broadcom BCM94360CSAX/Intel 7265/7260** `
+- `Tested CPUs`: **i5-5200U/5300u & i7-5600u**
+- `Integrated Graphics`: **HD Graphics 5500**
+- `Sound Card`: **ALC292**
+- `Wireless Cards Tested`: **DW1820A 00JT494/Broadcom BCM94360CSAX/Intel 7265/7260**
 
 ## Bios
 
