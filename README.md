@@ -3,7 +3,7 @@ This repo contains the installation guide and EFI files required to get a perfec
 
 ![img](https://img.shields.io/github/last-commit/racka98/Lenovo-Thinkpad-T450-Hackintosh-Guide-Catalina-with-Opencore.svg?color=green&label=last-commit) ![img](https://img.shields.io/badge/macOS%20support-Catalina--10.15.7-blue) ![img](https://img.shields.io/badge/Opencore%20version-0.6.2-red)
 
-![About Mac Big Sur](https://imgur.com/xAIkJh0)
+![About Mac Big Sur](https://imgur.com/xAIkJh0.png)
 
 
 Original Readme from Echo: 
