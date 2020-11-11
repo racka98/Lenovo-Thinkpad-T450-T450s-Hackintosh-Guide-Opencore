@@ -130,7 +130,7 @@
 				<key>Comment</key>
 				<string>Disable Nvidia GPU</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>Path</key>
 				<string>SSDT-DDGPU.aml</string>
 			</dict>
@@ -138,7 +138,7 @@
 				<key>Comment</key>
 				<string>Disable PCI Card Reader</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>Path</key>
 				<string>SSDT-PCI0.EXP1-Disbale.aml</string>
 			</dict>
