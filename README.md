@@ -79,6 +79,8 @@ You can also disable the boot picker screen so that you boot straight to th Appl
 ### 3. Enable native WiFi with the Intel card
 You can enable native WiFi on the Intel card by navigating (in config.plist) to Kernel -> Add -> 20 and set Enabled to True/YES (Enabling Airportitlwm.kext) and in 21 set Enabled to False/NO (Disabling itlwm.kext).
 
-**Note:** 
+**Note:**
+
   **1. This kext gives you native WiFi menu and enables location services, but often causes issues with the trackpad & trackpoint after waking from sleep (it doesn't work). A quick fix is to put the laptop to sleep again by closing the lid until the red sleep light starts to blink then waking the laptop again. Also it only happens when you put the laptop to sleep for a very long time (more than 2 or 3 hours). So for those who don't put their laptop to sleep for a very long time and just turn it off after use, this kext is ok to use.**
+  
   **2. The kext included in this EFI is only for Catalina. For those in Big Sur you should download the corresponding Airportitlwm.kext from [Openintelwireless](https://github.com/OpenIntelWireless) for Big Sur and replace the one in EFI -> Kexts.**
