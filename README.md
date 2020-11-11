@@ -6,7 +6,7 @@ This repo contains the installation guide and EFI files required to get a perfec
 - **This guide is not for models with Haswell 4th gen CPU**
 - **The EFI folder and the patched ACPI were first created by [EchoEspirit](https://github.com/EchoEsprit/Hackintosh-Catalina-OpenCore-Lenovo-T450s-efi) and futher optimized by [i3p9](https://github.com/i3p9/Hackintosh-Catalina-OpenCore-Lenovo-T450s-efi). I tweaked a couple of things and fixed some errors that were happening on T450 + added Intel WiFi drivers from [Openintelwireless](https://github.com/OpenIntelWireless)**
 - **I will try my best to keep the repo updated with the latest kexts and Opencore version**
-- **This EFI works with Big Sur Beta 9 but compatibility with future versions is not guaranteed until i update the kexts and Opencore version that will support the latest version of Big Sur**
+- **This EFI works with Big Sur Beta 10 but compatibility with future versions is not guaranteed until i update the kexts and Opencore version that will support the latest version of Big Sur**
 
 ![img](https://img.shields.io/github/last-commit/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Catalina-Opencore.svg?color=green&label=last-commit) ![img](https://img.shields.io/badge/macOS%20support-Catalina--10.15.7-blue) ![img](https://img.shields.io/badge/Opencore%20version-0.6.2-red)
 
@@ -38,7 +38,7 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 # What works
 
 - Sleep / Wake
-- Wifi and Bluetooth (Built-in Intel 7265 or 7260 cards with Heliport + itlwm.kext) **Airportitlwm.kext is not recommended, it causes issues with Trackpad after wake from sleep**
+- Wifi and Bluetooth (Built-in Intel 7265 or 7260 cards with Heliport + itlwm.kext) **Airportitlwm.kext is not recommended, it causes issues with Trackpad after wake from sleep {See on Post Install}**
 - AirPort Extreme (Broadcom BCM94360CSAX & NGFF A/E Adapter) **Recommended Upgrade to get native WiFi & Bluetooth**
 - Handoff, Continuity, AirDrop
 - iMessage, FaceTime, App Store, iTunes Store (Change Config.plist -> PlatformInfo -> Generic -> MLB and SystemSerialNumber)
@@ -64,3 +64,23 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 # Installation Guide
 
 **COMING SOON**
+
+# Post Install
+Once you have verifed that your machine boots properly without any issues as described in the "What Works section", proceed to do the following
+
+### 1. Disable Verbose mode (the black screen with logs on boot up)
+In config.plist, navigate to NVRAM -> Add -> 7C436110-AB2A-4BBB-A880-FE41995C9F82 -> boot-args and delete only the '-v' argument
+
+### 2. Disable AppleDebug and ApplePanic
+In the config.plist, naviaget to Misc -> Debug and change both AppleDebug and ApplePanic to False (NO)
+
+You can also disable the boot picker screen so that you boot straight to th Apple logo by setting ShowPicker under Misc -> Boot to False (NO)
+
+### 3. Enable native WiFi with the Intel card
+You can enable native WiFi on the Intel card by navigating (in config.plist) to Kernel -> Add -> 20 and set Enabled to True/YES (Enabling Airportitlwm.kext) and in 21 set Enabled to False/NO (Disabling itlwm.kext).
+
+**Note:**
+
+  **1. This kext gives you native WiFi menu and enables location services, but often causes issues with the trackpad & trackpoint after waking from sleep (it doesn't work). A quick fix is to put the laptop to sleep again by closing the lid until the red sleep light starts to blink then waking the laptop again. Also it only happens when you put the laptop to sleep for a very long time (more than 2 or 3 hours). So for those who don't put their laptop to sleep for a very long time and just turn it off after use, this kext is ok to use.**
+  
+  **2. The kext included in this EFI is only for Catalina. For those in Big Sur you should download the corresponding Airportitlwm.kext from [Openintelwireless](https://github.com/OpenIntelWireless) for Big Sur and replace the one in EFI -> Kexts.**
