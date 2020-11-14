@@ -8,7 +8,7 @@ This repo contains the installation guide and EFI files required to get a perfec
 - **I will try my best to keep the repo updated with the latest kexts and Opencore version**
 - **This EFI works with Big Sur Beta 10 but compatibility with future versions is not guaranteed until i update the kexts and Opencore version that will support the latest version of Big Sur**
 
-![img](https://img.shields.io/github/last-commit/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Catalina-Opencore.svg?color=green&label=last-commit) ![img](https://img.shields.io/badge/macOS%20support-Catalina--10.15.7-blue) ![img](https://img.shields.io/badge/Opencore%20version-0.6.2-red)
+![img](https://img.shields.io/github/last-commit/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Catalina-Opencore.svg?color=green&label=last-commit) ![img](https://img.shields.io/badge/macOS%20support-Catalina--10.15.7-blue) ![img](https://img.shields.io/badge/Opencore%20version-0.6.3-red)
 
 ![About Mac Big Sur](https://imgur.com/xAIkJh0.png)
 
