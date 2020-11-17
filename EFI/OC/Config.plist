@@ -1043,7 +1043,7 @@
 				IAAAAA==
 				</data>
 				<key>model</key>
-				<string>Intel Wildcat Point-LP High Definition Audio Controller</string>
+				<string>Realtek High Definition Audio Controller</string>
 				<key>name</key>
 				<string>Sound Card</string>
 			</dict>
