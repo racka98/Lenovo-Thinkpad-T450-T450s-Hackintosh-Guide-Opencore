@@ -64,9 +64,36 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 
 # Installation Guide
 
-## COMING SOON
+## macOS Big Sur
 
-For the mean time follow the [Dortania Installation Guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/) but replace the whole OC and BOOT folders in EFI with the ones in this repo.
+**For this release it is essential you use macOS to create the install USB. An install USB created in Linux or windows won't work. If you don't have a real mac or another hackintosh you always use a VM (See Note no. 2)**
+
+**This is a simple and quick summary of the install USB creation** 
+1. Download gibMacOS: https://github.com/corpnewt/gibMacOS
+
+2. Right click then choose open on gibMacOS.command (it will launch in terminal)
+
+3. Choose a number from the list provided (Big Sur will probably be number 1 in the list as 11.0.1 Public release)
+
+4. It will download Big Sur (12.19 GB) and it will place the contents in gibMacOS folder under macOS Downloads/publicrelease/11.0.1 macOS Big Sur.
+
+5. Open the InstallAssistant.pkg that will extract the installer to your Applications folder
+
+6. Format your usb drive to Mac OS Extentended (Journaled) with GUID partition scheme
+
+7. Now run: `sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
+
+MyVolume will be replaced by the name you gave to your usb when formatting it. Or you could name the usb as MyVolume when you were formatting.
+
+This will create the bootable usb that works on a real mac.
+
+8. Now you can proceed with "Setting up OpenCore's EFI environment" from [here](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-the-installer).
+
+9. Copy the OC and BOOT files from my EFI and fireup the installer.
+
+10. Select Install macOS Big Sur from the boot menu and not the recovery partition.
+
+The [Dortania Installation Guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/) is more detailed and you easily refer to it for more details. I haven't gotten time to write a detailed guide.
 
 ## Note: 
 ## 1. If you are installing Catalina or Mojave it is important that you disable Airportitlwm.kext in Kernel/Add/20 of Config.plist and enable itlwm.kext instead. Read Post Install #4.
