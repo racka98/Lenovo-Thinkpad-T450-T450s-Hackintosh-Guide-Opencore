@@ -64,11 +64,13 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 
 # Installation Guide
 
-**COMING SOON**
+## COMING SOON
 
 For the mean time follow the [Dortania Installation Guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/) but replace the whole OC and BOOT folders in EFI with the ones in this repo.
 
-**Note: If you are installing Catalina or Mojave it is important that you disable Airportitlwm.kext in Kernel/Add/20 of Config.plist and enable itlwm.kext instead. Read Post Install #4.**
+## Note: 
+## 1. If you are installing Catalina or Mojave it is important that you disable Airportitlwm.kext in Kernel/Add/20 of Config.plist and enable itlwm.kext instead. Read Post Install #4.
+## 2. For those having a black screen or frozen installer when booting the install USB, create the USB using macOS and not Linux or Windows. Details on that [here](https://github.com/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Opencore/issues/2#issuecomment-732408469)
 
 # Post Install
 Once you have verifed that your machine boots properly without any issues as described in the "What Works section", proceed to do the following
