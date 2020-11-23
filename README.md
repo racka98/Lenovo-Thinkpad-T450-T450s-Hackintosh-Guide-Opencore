@@ -66,7 +66,7 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 
 ## macOS Big Sur
 
-**For this release it is essential you use macOS to create the install USB. An install USB created in Linux or windows won't work. If you don't have a real mac or another hackintosh you always use a VM (See Note no. 2)**
+**For this release it is essential you use macOS to create the install USB. An install USB created in Linux or windows won't work. If you don't have a real mac or another hackintosh you can always use a VM (See Note no. 2)**
 
 **This is a simple and quick summary of the install USB creation** 
 1. Download gibMacOS: https://github.com/corpnewt/gibMacOS
@@ -83,9 +83,8 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 
 7. Now run: `sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
 
-MyVolume will be replaced by the name you gave to your usb when formatting it. Or you could name the usb as MyVolume when you were formatting.
-
-This will create the bootable usb that works on a real mac.
+> MyVolume will be replaced by the name you gave to your usb when formatting it. Or you could name the usb as MyVolume when you were formatting.
+> This will create the bootable usb that works on a real mac.
 
 8. Now you can proceed with "Setting up OpenCore's EFI environment" from [here](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-the-installer).
 
