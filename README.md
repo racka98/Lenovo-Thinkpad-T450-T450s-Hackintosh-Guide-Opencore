@@ -75,7 +75,7 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 
 3. Choose a number from the list provided (Big Sur will probably be number 1 in the list as 11.0.1 Public release)
 
-4. It will download Big Sur (12.19 GB) and it will place the contents in gibMacOS folder under macOS Downloads/publicrelease/11.0.1 macOS Big Sur.
+4. It will download Big Sur (12.19 GB) and it will place the contents in gibMacOS folder under `macOS Downloads/publicrelease/11.0.1 macOS Big Sur`
 
 5. Open the InstallAssistant.pkg that will extract the installer to your Applications folder
 
