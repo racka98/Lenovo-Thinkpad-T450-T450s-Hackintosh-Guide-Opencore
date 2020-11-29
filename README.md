@@ -50,7 +50,7 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 - Touchpad
 - Trackpoint
 - miniDP
-- SD Card Reader (Thanks to @willmav5000)
+- SD Card Reader (Enable Sinetek-rtsx.kext in Config.plist because it is unstable to be left on by default)
 - Use [one-key-hidpi](https://github.com/xzhih/one-key-hidpi) to enable HiDPI
 - If you are using a usb mouse with side buttons, you can spoof apple usb mouse by change the pid and vid in AnyAppleUSBMouse.kext/Info.plist and enable it in config.plist.
 
