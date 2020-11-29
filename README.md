@@ -1,4 +1,4 @@
-# Lenovo Thinkpad T450 & T450s Hackintosh Guide for Catalina with Opencore
+# Lenovo Thinkpad T450 & T450s Hackintosh Guide for Mojave, Catalina & Big Sur with Opencore
 This repo contains the installation guide and EFI files required to get a perfectly functional Big Sur Public Release, Catalina and Mojave hackintosh on your T450 or T450s since they share the same hardware. Everything is stable and functional as described in this Readme. 
 
 ## A few worthy mentions about this repo:
