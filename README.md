@@ -36,6 +36,9 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 - `Fingerprint Sensor`: **Disabled** `(Causes issues with wake from sleep)`;
 - `CSM Support`: **Yes**.
 
+**Note: If you can't see any boot entries with CMS support set to Yes, change it to NO. After this you will get a garbled screen, to fix this put the laptop to sleep by closing the lid till the light starts blinking and wake it up**
+
+
 # What works
 
 - Sleep / Wake
