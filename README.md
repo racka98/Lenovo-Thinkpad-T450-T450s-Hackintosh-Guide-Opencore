@@ -6,7 +6,7 @@ This repo contains the installation guide and EFI files required to get a perfec
 - **This guide is not for models with Haswell 4th gen CPU**
 - **The EFI folder and the patched ACPI were first created by [EchoEspirit](https://github.com/EchoEsprit/Hackintosh-Catalina-OpenCore-Lenovo-T450s-efi) and futher optimized by [i3p9](https://github.com/i3p9/Hackintosh-Catalina-OpenCore-Lenovo-T450s-efi). I tweaked a couple of things and fixed some errors that were happening on T450 + added Intel WiFi drivers from [Openintelwireless](https://github.com/OpenIntelWireless)**
 - **I will try my best to keep the repo updated with the latest kexts and Opencore version**
-- **This EFI works with Big Sur Public Release (11.0.1), Catalina and Mojave**
+- **This EFI works with Big Sur Public Release (11.x), Catalina and Mojave**
 - **This EFI is Configured with Big Sur in mind. If you are using it on Catalina or Mojave read the the whole guide to know where to make the necessary changes**
 
 ![img](https://img.shields.io/github/last-commit/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Opencore.svg?color=red&label=Last%20Update) ![img](https://img.shields.io/badge/macOS%20Support-Big%20Sur--11-blue) ![img](https://img.shields.io/badge/OpenCore%20Version-0.6.6-yellow)
