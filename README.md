@@ -8,6 +8,7 @@ This repo contains the installation guide and EFI files required to get a perfec
 - **I will try my best to keep the repo updated with the latest kexts and Opencore version**
 - **This EFI works with Big Sur Public Release (11.x), Catalina and Mojave**
 - **This EFI is Configured with Big Sur in mind. If you are using it on Catalina or Mojave read the the whole guide to know where to make the necessary changes**
+- **With every EFI update you retrieve from here please remember to transfer your Device details like Serial number, MLB, ROM, Sytem-UUID and all of them under Plaforminfo -> Generic**
 
 ![img](https://img.shields.io/github/last-commit/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Opencore.svg?color=red&label=Last%20Update) ![img](https://img.shields.io/badge/macOS%20Support-Big%20Sur--11-blue) ![img](https://img.shields.io/badge/OpenCore%20Version-0.6.6-yellow)
 
