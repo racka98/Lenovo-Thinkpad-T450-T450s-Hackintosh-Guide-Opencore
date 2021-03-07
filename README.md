@@ -64,7 +64,7 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 - Sidecar (Wired Sidecar works but only in Macbook9,1 SMBIOS, which has bad battery life, you can choose what you want)
 - With the IntelBluetoothFirmware.kext and Airportitlwm.kext or itlwm.kext enabled Bluetooth headphones only work when you are not connected to any wifi network or turn off wifi. This is a known issue with 7265 and 7260 cards. You can get 8x series cards to fix this or buy the recomended cards (DW1820A 00JT494 or Broadcom BCM94360CSAX)
 
-## Note: If you need to edit config.plist, don't use OpenCore configurator or Clover configurator, use PlistEdit pro (Included in Utilities) or Xcode.
+## Note: If you need to edit config.plist, don't use OpenCore configurator or Clover configurator, use PlistEdit pro or Xcode.
 
 # Installation Guide
 
