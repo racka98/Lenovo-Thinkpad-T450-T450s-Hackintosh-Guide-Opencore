@@ -10,28 +10,28 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			iiPp9Al8HeSKnOdHYLyOz3pkypQ=
+			R5JHzuFucP2MoeWG8ZFLDZC43jg=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"e3cc20320fa25b8acb5424a55ee9865f16db3e9c" or cdhash H"8a23e9f4097c1de48a9ce74760bc8ecf7a64ca94"</string>
+			<string>cdhash H"7a5877a24942ce9415aa80d69740dd553ee5a63f" or cdhash H"479247cee16e70fd8ca1e586f1914b0d90b8de38"</string>
 		</dict>
 		<key>PlugIns/RMISMBus.kext</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			tZoXQcdQy4HJvlOGauuMWeGwf3U=
+			0n1evBh9jzeYLVBK5gheGtcziso=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"20088a528ea96f6c72ad7dc9298c785cc6632026" or cdhash H"b59a1741c750cb81c9be53866aeb8c59e1b07f75"</string>
+			<string>cdhash H"c78d007cc86ba2467fb53469f85db183aef62e07" or cdhash H"d27d5ebc187d8f37982d504ae6085e1ad7338aca"</string>
 		</dict>
 		<key>PlugIns/VoodooInput.kext</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			DoJw9gZQAsb8b/PWZhCfbNRDQi0=
+			/xsD212ZAQPxjTgjEQHSV//kS08=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"289f62757e47050592c5fe13ecb0b54c3700d192" or cdhash H"0e8270f6065002c6fc6ff3d666109f6cd443422d"</string>
+			<string>cdhash H"5aec82b0542804e4765540a20b6cf3cc71dde390" or cdhash H"ff1b03db5d990103f18d38231101d257ffe44b4f"</string>
 		</dict>
 	</dict>
 	<key>rules</key>
