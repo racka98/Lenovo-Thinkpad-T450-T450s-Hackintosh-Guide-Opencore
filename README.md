@@ -77,6 +77,7 @@ macOS Guide
 7. Open the InstallAssistant.pkg that will extract the installer to your Applications folder
 8. Open disk utility and format your usb as macOS Extended Journaled with a GUID partiton scheme.
 9. Open a terminal window and run this command: `sudo /Applications/Install\ macOS\ 12\ Beta.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
+
 Note: Change `MyVolume` to the name of your usb partiton
 10. Open terminal and run "diskutil list" then find your flash drive along with its EFI partition identifier
 11. Run "sudo diskutil mount identifier" (replace "identifier with your EFI identifier number)
@@ -110,6 +111,7 @@ Windows Guide:
 14. Paste both of those files in the `com.apple.recovery.boot` folder in your flash drive partiton
 15. Download the latest EFI created [here](https://github.com/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Opencore/releases)
 16. Copy the EFI folder and paste it in your USB partiton
+
 Note: Make sure to apply the correct bios settings before continuing (provided above)
 17. Restart your laptop and hit f12
 18. Select your flash drive as temporary boot option
@@ -130,6 +132,7 @@ macOS Guide:
 10. Paste both of those files in the `com.apple.recovery.boot` folder in your flash drive partiton
 11. Download the latest EFI created [here](https://github.com/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Opencore/releases)
 12. Copy the EFI folder and paste it in your USB partiton
+
 Note: Make sure to apply the correct bios settings before continuing (provided above)
 13. Restart your laptop and hit f12
 14. Select your flash drive as temporary boot option
@@ -138,7 +141,7 @@ Great! Now install and set up macOS Big Sur as usual. When you are done be sure 
 
 Linux Guide:
 
-Follow this [guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html#downloading-macos) to set up the macOS Installer in linux
+Follow this [guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html#downloading-macos) to set up the online macOS Big Sur Installer in Linux. I haven't gotten time to write a detailed guide.
 
 The [Dortania Installation Guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/) is more detailed and you easily refer to it for more details. I haven't gotten time to write a detailed guide.
 
