@@ -42,7 +42,7 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Monterey.
 # What works
 
 - Sleep / Wake
-- Wifi and Bluetooth (Intel 7265 or 7260 cards with Airportitlwm.kext) **Currently there are no drivers for intel cards that support macOS Monterey, if you do not have access to Ethernet or a macOS compatible card, I do not recommend updating to Monterey.** **(Note: the intel kexts for wifi and bluetooth come with some issues , read the post install notes for more info & solutions)**
+- Wifi and Bluetooth (Intel 7265 or 7260 cards with Airportitlwm.kext) **(Note: the intel kexts for wifi and bluetooth come with some issues , read the post install notes for more info, new Airportitlwm Monterey kext & fixes)**
 - AirPort Extreme (Broadcom BCM94360CSAX & NGFF A/E Adapter) **Recommended Upgrade to get native WiFi & Bluetooth**
 - Handoff, Continuity, AirDrop
 - iMessage, FaceTime, App Store, iTunes Store (Read post install guide for more info)
@@ -130,13 +130,13 @@ If you are on Catalina or Mojave, you can enable WiFi on the Intel card by navig
 
 Or you can use Airportitlwm.kext for Catalina from Intel WiFi Kexts folder and get native wifi on Catalina in the expense of loosing trackpad after wake from sleep.
 
-**For those on Big Sur you can comfortably use the Airportitlwm.kext included as the trackpad issues after sleep do not happen on Big Sur.**
+**For those on Monterey & Big Sur you can comfortably use the Airportitlwm.kext included as the trackpad issues after sleep do not happen on Big Sur.**
 
 **Note:**
 
   **1. Airportitlwm.kext gives you native WiFi menu and enables location services, but often causes issues with the trackpad & trackpoint after waking from sleep (it doesn't work) on Catalina and Mojave (not Big Sur). A quick fix is to put the laptop to sleep again by closing the lid until the red sleep light starts to blink then waking the laptop again. Also it only happens when you put the laptop to sleep for a very long time (more than 2 or 3 hours). So for those who don't put their laptop to sleep for a very long time and just turn it off after use, this kext is ok to use.**
   
-  **2. The Airportitlwm.kext included in this EFI is only for Big Sur. For those in Catalina or Mojave you should download the corresponding Airportitlwm.kext from [Openintelwireless](https://github.com/OpenIntelWireless) or use the one in Intel WiFi Kexts Folder of this repo (Recommended) and replace the one in EFI -> Kexts.**
+  **2. The Airportitlwm.kext included in this EFI is only for Big Sur. For those in Monterey download this [Kext](https://github-repository-files.githubusercontent.com/241659610/6613211?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210608%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210608T041956Z&X-Amz-Expires=300&X-Amz-Signature=6f0a6ea28d47ef506bc214adafb04589c5db271b1ea9ae78bdaf8fc6e0e6569c&X-Amz-SignedHeaders=host&actor_id=72399917&key_id=0&repo_id=241659610&response-content-disposition=attachment%3Bfilename%3DAirportItlwm-Monterey.kext.zip&response-content-type=application%2Fzip) and replace the one in EFI -> Kexts. For those in Catalina or Mojave you should download the corresponding Airportitlwm.kext from [Openintelwireless](https://github.com/OpenIntelWireless) or use the one in Intel WiFi Kexts Folder of this repo (Recommended) and replace the one in EFI -> Kexts.**
   
  **3. Airportitlwm causes the bluetooth to be unstable and because so you may experience stutters or interruptions while using bluetooth headphones. To fix this you can turn off wifi can connect via ethernet or you can get 8x series cards to fix this or buy the recomended cards (DW1820A 00JT494 or Broadcom BCM94360CSAX)**
   
