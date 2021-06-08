@@ -7,7 +7,7 @@ This repo contains the installation guide and EFI files required to get a perfec
 - **The EFI folder and the patched ACPI were first created by [EchoEspirit](https://github.com/EchoEsprit/Hackintosh-Catalina-OpenCore-Lenovo-T450s-efi) and futher optimized by [i3p9](https://github.com/i3p9/Hackintosh-Catalina-OpenCore-Lenovo-T450s-efi). I tweaked a couple of things and fixed some errors that were happening on T450 + added Intel WiFi drivers from [Openintelwireless](https://github.com/OpenIntelWireless)**
 - **I will try my best to keep the repo updated with the latest kexts and OpenCore version**
 - **This EFI works with macOS Monterey, Big Sur, Catalina and Mojave**
-- **This EFI is Configured with Monterey in mind. If you are using it on Monterey, Big Sur, Catalina or Mojave read the the whole guide to know where to make the necessary changes**
+- **This EFI is Configured with Monterey in mind. If you are using it on Big Sur, Catalina or Mojave read the the whole guide to know where to make the necessary changes**
 - **With every EFI update you retrieve from here please remember to transfer your Device details like Serial number, MLB, ROM, Sytem-UUID and all of them under Platforminfo -> Generic**
 
 ![img](https://img.shields.io/badge/Last%20Update-June-red) ![img](https://img.shields.io/badge/macOS%20Support-Monterey--12-blue) ![img](https://img.shields.io/badge/OpenCore%20Version-0.6.8-yellow)
