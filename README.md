@@ -1,22 +1,22 @@
-# Lenovo Thinkpad T450 & T450s Hackintosh Guide for Mojave, Catalina & Big Sur with Opencore
-This repo contains the installation guide and EFI files required to get a perfectly functional Big Sur Public Release, Catalina and Mojave hackintosh on your T450 or T450s since they share the same hardware. Everything is stable and functional as described in this Readme. 
+# Lenovo Thinkpad T450 & T450s Hackintosh Guide for Mojave, Catalina, Big Sur & Monterey with Opencore 0.6.8
+This repo contains the installation guide and EFI files required to get a perfectly functional Monterey, Big Sur, Catalina and Mojave hackintosh on your T450 or T450s since they share the same hardware. Everything is stable and functional as described in this Readme. 
 
 ## A few worthy mentions about this repo:
 
 - **This guide is not for models with Haswell 4th gen CPU**
 - **The EFI folder and the patched ACPI were first created by [EchoEspirit](https://github.com/EchoEsprit/Hackintosh-Catalina-OpenCore-Lenovo-T450s-efi) and futher optimized by [i3p9](https://github.com/i3p9/Hackintosh-Catalina-OpenCore-Lenovo-T450s-efi). I tweaked a couple of things and fixed some errors that were happening on T450 + added Intel WiFi drivers from [Openintelwireless](https://github.com/OpenIntelWireless)**
 - **I will try my best to keep the repo updated with the latest kexts and Opencore version**
-- **This EFI works with Big Sur Public Release (11.x), Catalina and Mojave**
-- **This EFI is Configured with Big Sur in mind. If you are using it on Catalina or Mojave read the the whole guide to know where to make the necessary changes**
+- **This EFI works with macOS Monterey, Big Sur, Catalina and Mojave**
+- **This EFI is Configured with Monterey in mind. If you are using it on Monterey, Big Sur, Catalina or Mojave read the the whole guide to know where to make the necessary changes**
 - **With every EFI update you retrieve from here please remember to transfer your Device details like Serial number, MLB, ROM, Sytem-UUID and all of them under Platforminfo -> Generic**
 
-![img](https://img.shields.io/github/last-commit/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Opencore.svg?color=red&label=Last%20Update) ![img](https://img.shields.io/badge/macOS%20Support-Big%20Sur--11-blue) ![img](https://img.shields.io/badge/OpenCore%20Version-0.6.6-yellow)
+![img](https://img.shields.io/badge/Last%20Update-June-red) ![img](https://img.shields.io/badge/macOS%20Support-Monterey--12-blue) ![img](https://img.shields.io/badge/OpenCore%20Version-0.6.8-yellow)
 
-![About Mac Big Sur](https://imgur.com/vYo3Jt4.png)
+![About macOS Monterey](https://i.imgur.com/hIZ3lkb.png)
 
 # Introduction
 
-EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
+EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Monterey.
 
 - `Tested CPUs`: **i5-5200U/5300u & i7-5600u**
 - `Integrated Graphics`: **HD Graphics 5500**
@@ -30,7 +30,6 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 - `Virtualization -> Intel Virtualization Technology`: **Enabled**;
 - `Virtualization -> Vt-directed IO`: **Disabled**;
 - `Internal Device Access -> Bottom Cover Tamper Detection`: must be **Disabled**;
-- `Anti-Theft -> Current Setting`: **Disabled**;
 - `Anti-Theft -> Computrace -> Current Setting`: **Disabled**;
 - `Secure Boot -> Secure Boot`: **Disabled**;
 - `UEFI/Legacy Boot`: **UEFI Only**;
@@ -43,7 +42,7 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 # What works
 
 - Sleep / Wake
-- Wifi and Bluetooth (Built-in Intel 7265 or 7260 cards with Airportitlwm.kext) **itlwm.kext is recommended for those on Catalina because Airportitlwm causes issues with Trackpad after wake from sleep {See on Post Install}**
+- Wifi and Bluetooth (Built-in Intel 7265 or 7260 cards with Airportitlwm.kext) **itlwm.kext is recommended for those on Catalina because Airportitlwm causes issues with Trackpad after wake from sleep {See on Post Install}** **Currently Airportitlwm does not support macOS Monterey, if you do not have access to Ethernet I do not recommend updating.**
 - AirPort Extreme (Broadcom BCM94360CSAX & NGFF A/E Adapter) **Recommended Upgrade to get native WiFi & Bluetooth**
 - Handoff, Continuity, AirDrop
 - iMessage, FaceTime, App Store, iTunes Store (Change Config.plist -> PlatformInfo -> Generic -> MLB and SystemSerialNumber)
@@ -56,7 +55,7 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 - miniDP
 - SD Card Reader (Enable Sinetek-rtsx.kext in Config.plist because it is unstable to be left on by default)
 - Use [one-key-hidpi](https://github.com/xzhih/one-key-hidpi) to enable HiDPI
-- If you are using a usb mouse with side buttons, you can spoof apple usb mouse by change the pid and vid in AnyAppleUSBMouse.kext/Info.plist and enable it in config.plist.
+- If you are using a usb mouse with side buttons, you can spoof apple usb mouse by change the pid and vid in AnyAppleUSBMouse.kext/Info.plist and enable it in Config.plist.
 
 # What doesn't work
 
@@ -64,37 +63,50 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Catalina.
 - Sidecar (Wired Sidecar works but only in Macbook9,1 SMBIOS, which has bad battery life, you can choose what you want)
 - With the IntelBluetoothFirmware.kext and Airportitlwm.kext or itlwm.kext enabled Bluetooth headphones only work when you are not connected to any wifi network or turn off wifi. This is a known issue with 7265 and 7260 cards. You can get 8x series cards to fix this or buy the recomended cards (DW1820A 00JT494 or Broadcom BCM94360CSAX)
 
-## Note: If you need to edit config.plist, don't use OpenCore configurator or Clover configurator, use PlistEdit pro or Xcode.
+## Note: If you need to edit Config.plist, don't use OpenCore configurator or Clover configurator, use PlistEdit pro , Proppertree, or Xcode.
 
 # Installation Guide
 
-## macOS Big Sur
+## macOS Monterey
 
-**For this release it is essential you use macOS to create the install USB. An install USB created in Linux or windows won't work. If you don't have a real mac or another hackintosh you can always use a VM (See Note no. 2)**
+**This is a simple and quick summary of the online install USB creation** 
+Windows Guide:
 
-**This is a simple and quick summary of the install USB creation** 
-1. Download gibMacOS: https://github.com/corpnewt/gibMacOS
+1. Download rufus (https://rufus.ie/en/)
+2. Select the desired flash drive you would like to put the installer on under the device option
+3. Select non-bootable as the boot selection (REQUIRED)
+4. Select FAT-32 or Large FAT-32 as the partition scheme
+5. Open up the usb partition in explorer and delete the files created by rufus
+6. Create a folder on that partiton named "com.apple.recovery.boot"
+7. Install python (https://www.python.org/downloads/) (Make sure you select add python x.x to path)
+8. Download and extract the opencore package (https://github.com/acidanthera/OpenCorePkg/releases)
+9. Select the macrecovery folder in the opencorepkg folder at "/Utilities/macrecovery/"
+10. Click on home > copy path at the top of file explorer
+11. Fire up command prompt and type cd and hit spacebar and paste the path of the macrecovery folder.
+12. Run the command "./macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000"
+13. This will put some files in the macrecovery folder but we only need BaseSystem.dmg and BaseSystem.chunklist
+14. Paste both of those files in the "com.apple.recovery.boot" folder in your flash drive partiton
+15. Download the latest EFI created (https://github.com/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Opencore/releases)
+16. Copy the EFI folder and paste it in your USB partiton
 
-2. Right click then choose open on gibMacOS.command (it will launch in terminal)
+macOS Guide:
 
-3. Choose a number from the list provided (Big Sur will probably be number 1 in the list as 11.0.1 Public release)
+1. Launch Disk Utility
+2. Select View > Show all devices at the top left
+3. Select your flash drive and format it as MS-DOS (FAT) or FAT-32
+4. Open up your usb partiton and create a folder named "com.apple.recovery.boot"
+5. Download and extract the opencore package (https://github.com/acidanthera/OpenCorePkg/releases)
+6. Select the macrecovery folder in the opencorepkg folder at "/Utilities/macrecovery/"
+7. Right click and click "New terminal at folder"
+8. Run the command "./macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000" in the terminal window
+9. This will put some files in the macrecovery folder but we only need BaseSystem.dmg and BaseSystem.chunklist
+10. Paste both of those files in the "com.apple.recovery.boot" folder in your flash drive partiton
+11. Download the latest EFI created (https://github.com/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Opencore/releases)
+12. Copy the EFI folder and paste it in your USB partiton
 
-4. It will download Big Sur (12.19 GB) and it will place the contents in gibMacOS folder under `macOS Downloads/publicrelease/11.0.1 macOS Big Sur`
+Linux Guide:
 
-5. Open the InstallAssistant.pkg that will extract the installer to your Applications folder
-
-6. Format your usb drive to Mac OS Extentended (Journaled) with GUID partition scheme
-
-7. Now run: `sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
-
-> MyVolume will be replaced by the name you gave to your usb when formatting it. Or you could name the usb as MyVolume when you were formatting.
-> This will create the bootable usb that works on a real mac.
-
-8. Now you can proceed with "Setting up OpenCore's EFI environment" from [here](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-the-installer).
-
-9. Copy the OC and BOOT files from my EFI and fireup the installer.
-
-10. Select Install macOS Big Sur from the boot menu and not the recovery partition.
+Follow this [guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html#downloading-macos) to set up the macOS Installer in linux
 
 The [Dortania Installation Guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/) is more detailed and you easily refer to it for more details. I haven't gotten time to write a detailed guide.
 
@@ -106,10 +118,10 @@ The [Dortania Installation Guide](https://dortania.github.io/OpenCore-Install-Gu
 Once you have verifed that your machine boots properly without any issues as described in the "What Works section", proceed to do the following
 
 ### 1. Disable Verbose mode (the black screen with logs on boot up)
-In config.plist, navigate to NVRAM -> Add -> 7C436110-AB2A-4BBB-A880-FE41995C9F82 -> boot-args and delete only the '-v' argument
+In Config.plist, navigate to NVRAM -> Add -> 7C436110-AB2A-4BBB-A880-FE41995C9F82 -> boot-args and delete only the '-v' argument
 
 ### 2. Disable AppleDebug and ApplePanic
-In the config.plist, naviaget to Misc -> Debug and change both AppleDebug and ApplePanic to False (NO)
+In the Config.plist, naviaget to Misc -> Debug and change both AppleDebug and ApplePanic to False (NO)
 
 You can also disable the boot picker screen so that you boot straight to th Apple logo by setting ShowPicker under Misc -> Boot to False (NO)
 
@@ -128,4 +140,3 @@ Or you can use Airportitlwm.kext for Catalina from Intel WiFi Kexts folder and g
   
 ### 4. Add Device Properties for Serial number and other info
 Follow this [guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#generate-a-new-serial) to set up serial number and the accompanying info to get iServices
-
