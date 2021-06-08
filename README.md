@@ -55,17 +55,16 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Monterey.
 - miniDP
 - SD Card Reader (Enable Sinetek-rtsx.kext in Config.plist because it is unstable to be left on by default)
 - HiDPI (Use [one-key-hidpi](https://github.com/xzhih/one-key-hidpi)
-- If you are using a usb mouse with side buttons, you can spoof apple usb mouse by change the pid and vid in AnyAppleUSBMouse.kext/Info.plist and enable it in Config.plist.
 - Sidecar (Wired Sidecar works but only in Macbook9,1 SMBIOS, which has bad battery life, see post install guide for more info)
 
 # What doesn't work
 - VGA
 
-## Note: If you need to edit Config.plist, don't use OpenCore configurator or Clover configurator, use PlistEdit pro , Proppertree, or Xcode.
+## Note: If you need to edit Config.plist, don't use OpenCore configurator or Clover configurator, use PlistEdit pro, PropperTree, or Xcode.
 
 # Installation Guide (Online Reccomended)
 
-##macOS Monterey Offline (Only availabile for macOS as of now)
+## macOS Monterey Offline (Only availabile for macOS as of now)
 
 **This is a simple and quick summary of the offline install USB creation**
 
@@ -75,7 +74,7 @@ macOS Guide:
 2. Goto System Preferences > Software Update and click "Upgrade Now" (it will save the macOS Monterey Installer to the Applications folder)
 3. Open Disk Utility and select View > Show All Devices at the top left
 4. Select your flash drive and format it as macOS Extended Journaled with GUID Partiton
-5. Launch terminal and run the following command "Sudo /Applications/Install\ macOS\ 12\ Beta.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume"
+5. Launch terminal and run the following command "sudo /Applications/Install\ macOS\ 12\ Beta.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume"
 Note: Replace "MyVolume" at the end of the command with the name of your USB partiton.
 
 6. Open terminal and run "diskutil list" then find your flash drive along with its EFI partition identifier
@@ -159,8 +158,12 @@ Or you can use Airportitlwm.kext for Catalina from Intel WiFi Kexts folder and g
 Note: the Airportitlwm kext for macOS Monterey is very new and may have issues. Please report those issues [here](https://github.com/OpenIntelWireless/itlwm/issues). Also the macOS Monterey kext provided above may be outdated at the the you are reading this so please check [here](https://github.com/OpenIntelWireless/itlwm/releases) and check if there is a released stable kext for Monterey.
   
  **3. Airportitlwm causes the bluetooth to be unstable and because so you may experience stutters or interruptions while using bluetooth headphones. To fix this you can turn off wifi and connect via ethernet or you can get 8x series cards to fix this or buy the recomended cards (DW1820A 00JT494 or Broadcom BCM94360CSAX)**
+
   
 ### 4. Add Device Properties for Serial number and other info
 Follow this [guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#generate-a-new-serial) to set up serial number and the accompanying info to get iServices
 
 If you want to get wired sidecar working, in Config.plist change the string in Platforminfo > Generic> SystemProductName to "MacBook9,1" (note: this causes the battery to drain faster)
+
+
+### 5. If you are using a usb mouse with side buttons, you can spoof apple usb mouse by change the pid and vid in AnyAppleUSBMouse.kext/Info.plist and enable it in Config.plist.
