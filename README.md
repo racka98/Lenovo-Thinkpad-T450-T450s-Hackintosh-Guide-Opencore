@@ -88,14 +88,14 @@ Note: Replace "MyVolume" at the end of the command with the name of your USB par
 **This is a simple and quick summary of the online install USB creation** 
 Windows Guide:
 
-1. Download rufus (https://rufus.ie/en/)
+1. Download [rufus](https://rufus.ie/en/)
 2. Select the desired flash drive you would like to put the installer on under the device option
 3. Select non-bootable as the boot selection (REQUIRED)
 4. Select FAT-32 or Large FAT-32 as the partition scheme
 5. Open up the usb partition in explorer and delete the files created by rufus
 6. Create a folder on that partiton named "com.apple.recovery.boot"
-7. Install python (https://www.python.org/downloads/) (Make sure you select add python x.x to path)
-8. Download and extract the opencore package (https://github.com/acidanthera/OpenCorePkg/releases)
+7. Install [python](https://www.python.org/downloads/) (Make sure you select add python x.x to path)
+8. Download and extract the [opencore package](https://github.com/acidanthera/OpenCorePkg/releases)
 9. Select the macrecovery folder in the opencorepkg folder at "/Utilities/macrecovery/"
 10. Click on home > copy path at the top of file explorer
 11. Fire up command prompt and type cd and hit spacebar and paste the path of the macrecovery folder.
@@ -111,7 +111,7 @@ macOS Guide:
 2. Select View > Show all devices at the top left
 3. Select your flash drive and format it as MS-DOS (FAT) or FAT-32
 4. Open up your usb partiton and create a folder named "com.apple.recovery.boot"
-5. Download and extract the opencore package (https://github.com/acidanthera/OpenCorePkg/releases)
+5. Download and extract the [opencore package](https://github.com/acidanthera/OpenCorePkg/releases)
 6. Select the macrecovery folder in the opencorepkg folder at "/Utilities/macrecovery/"
 7. Right click and click "New terminal at folder"
 8. Run the command "./macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000" in the terminal window
