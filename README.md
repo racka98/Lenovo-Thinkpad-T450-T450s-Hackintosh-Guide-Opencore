@@ -54,9 +54,9 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Monterey.
 - Trackpoint
 - miniDP
 - SD Card Reader (Enable Sinetek-rtsx.kext in Config.plist because it is unstable to be left on by default)
-- Use [one-key-hidpi](https://github.com/xzhih/one-key-hidpi) to enable HiDPI
+- HiDPI (Use [one-key-hidpi](https://github.com/xzhih/one-key-hidpi)
 - If you are using a usb mouse with side buttons, you can spoof apple usb mouse by change the pid and vid in AnyAppleUSBMouse.kext/Info.plist and enable it in Config.plist.
-- Sidecar (Wired Sidecar works but only in Macbook9,1 SMBIOS, which has bad battery life, you can choose what you want)
+- Sidecar (Wired Sidecar works but only in Macbook9,1 SMBIOS, which has bad battery life, see post install guide for more info)
 
 # What doesn't work
 - VGA
@@ -116,12 +116,14 @@ The [Dortania Installation Guide](https://dortania.github.io/OpenCore-Install-Gu
 Once you have verifed that your machine boots properly without any issues as described in the "What Works section", proceed to do the following
 
 ### 1. Disable Verbose mode (the black screen with logs on boot up)
-In Config.plist, navigate to NVRAM -> Add -> 7C436110-AB2A-4BBB-A880-FE41995C9F82 -> boot-args and delete only the '-v' argument
+In Config.plist, navigate to NVRAM -> Add -> 7C436110-AB2A-4BBB-A880-FE41995C9F82 -> boot-args and delete the '-v' argument
 
 ### 2. Disable AppleDebug and ApplePanic
 In the Config.plist, naviaget to Misc -> Debug and change both AppleDebug and ApplePanic to False (NO)
 
 You can also disable the boot picker screen so that you boot straight to th Apple logo by setting ShowPicker under Misc -> Boot to False (NO)
+
+Note: you can still see the boot picker with ShowPicker set to no/false by spamming Esc before the apple logo is displayed during boot.
 
 ### 3. Enable WiFi with the Intel card on Catalina and Mojave
 If you are on Catalina or Mojave, you can enable WiFi on the Intel card by navigating (in config.plist) to Kernel -> Add -> 20 and set Enabled to False/NO (Disabling Airportitlwm.kext) and in 21 set Enabled to True/YES (Enabling itlwm.kext). After enabling these and rebooting install Heliport App (included in Utilities).
@@ -140,3 +142,5 @@ Or you can use Airportitlwm.kext for Catalina from Intel WiFi Kexts folder and g
   
 ### 4. Add Device Properties for Serial number and other info
 Follow this [guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#generate-a-new-serial) to set up serial number and the accompanying info to get iServices
+
+If you want to get wired sidecar working, in Config.plist change the string in Platforminfo > Generic> SystemProductName to "MacBook9,1" (note: this causes the battery to drain faster)
