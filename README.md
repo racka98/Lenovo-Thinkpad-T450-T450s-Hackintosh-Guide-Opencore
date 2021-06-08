@@ -42,7 +42,7 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Monterey.
 # What works
 
 - Sleep / Wake
-- Wifi and Bluetooth (Built-in Intel 7265 or 7260 cards with Airportitlwm.kext) **Currently there are no drivers for intel cards that support macOS Monterey, if you do not have access to Ethernet or a macOS compatible card, I do not recommend updating.**
+- Wifi and Bluetooth (Intel 7265 or 7260 cards with Airportitlwm.kext) **Currently there are no drivers for intel cards that support macOS Monterey, if you do not have access to Ethernet or a macOS compatible card, I do not recommend updating to Monterey.** **(Note: the intel kexts for wifi and bluetooth come with some issues you may want to know about, read the post install notes down below)**
 - AirPort Extreme (Broadcom BCM94360CSAX & NGFF A/E Adapter) **Recommended Upgrade to get native WiFi & Bluetooth**
 - Handoff, Continuity, AirDrop
 - iMessage, FaceTime, App Store, iTunes Store (Change Config.plist -> PlatformInfo -> Generic -> MLB and SystemSerialNumber)
