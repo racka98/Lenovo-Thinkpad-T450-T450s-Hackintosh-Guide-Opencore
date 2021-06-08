@@ -54,7 +54,7 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Monterey.
 - Trackpoint
 - miniDP
 - SD Card Reader (Enable Sinetek-rtsx.kext in Config.plist because it is unstable to be left on by default)
-- HiDPI (Use [one-key-hidpi](https://github.com/xzhih/one-key-hidpi)
+- HiDPI (Use [one-key-hidpi](https://github.com/xzhih/one-key-hidpi))
 - Sidecar (Wired Sidecar works but only in Macbook9,1 SMBIOS, which has bad battery life, see post install guide for more info)
 
 # What doesn't work
