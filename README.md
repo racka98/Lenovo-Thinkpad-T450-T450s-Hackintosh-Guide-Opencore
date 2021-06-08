@@ -42,7 +42,7 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Monterey.
 # What works
 
 - Sleep / Wake
-- Wifi and Bluetooth (Built-in Intel 7265 or 7260 cards with Airportitlwm.kext) **itlwm.kext is recommended for those on Catalina because Airportitlwm causes issues with Trackpad after wake from sleep {See on Post Install}** **Currently Airportitlwm does not support macOS Monterey, if you do not have access to Ethernet I do not recommend updating.**
+- Wifi and Bluetooth (Built-in Intel 7265 or 7260 cards with Airportitlwm.kext) **Currently there are no drivers for intel cards that support macOS Monterey, if you do not have access to Ethernet or a macOS compatible card, I do not recommend updating.**
 - AirPort Extreme (Broadcom BCM94360CSAX & NGFF A/E Adapter) **Recommended Upgrade to get native WiFi & Bluetooth**
 - Handoff, Continuity, AirDrop
 - iMessage, FaceTime, App Store, iTunes Store (Change Config.plist -> PlatformInfo -> Generic -> MLB and SystemSerialNumber)
@@ -137,6 +137,8 @@ Or you can use Airportitlwm.kext for Catalina from Intel WiFi Kexts folder and g
   **1. Airportitlwm.kext gives you native WiFi menu and enables location services, but often causes issues with the trackpad & trackpoint after waking from sleep (it doesn't work) on Catalina and Mojave (not Big Sur). A quick fix is to put the laptop to sleep again by closing the lid until the red sleep light starts to blink then waking the laptop again. Also it only happens when you put the laptop to sleep for a very long time (more than 2 or 3 hours). So for those who don't put their laptop to sleep for a very long time and just turn it off after use, this kext is ok to use.**
   
   **2. The Airportitlwm.kext included in this EFI is only for Big Sur. For those in Catalina or Mojave you should download the corresponding Airportitlwm.kext from [Openintelwireless](https://github.com/OpenIntelWireless) or use the one in Intel WiFi Kexts Folder of this repo (Recommended) and replace the one in EFI -> Kexts.**
+  
+ **3. Airportitlwm causes the bluetooth to be unstable and because so you may experience stutters or interruptions while using bluetooth headphones.**
   
 ### 4. Add Device Properties for Serial number and other info
 Follow this [guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#generate-a-new-serial) to set up serial number and the accompanying info to get iServices
