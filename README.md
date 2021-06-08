@@ -8,7 +8,7 @@ This repo contains the installation guide and EFI files required to get a perfec
 - **I will try my best to keep the repo updated with the latest kexts and OpenCore version**
 - **This EFI works with macOS Monterey, Big Sur, Catalina and Mojave**
 - **This EFI is Configured with Monterey in mind. If you are using it on Big Sur, Catalina or Mojave read the the whole guide to know where to make the necessary changes**
-- **With every EFI update you retrieve from here please remember to transfer your Device details like Serial number, MLB, ROM, Sytem-UUID and all of them under Platforminfo -> Generic**
+- **With every EFI update you retrieve from here please remember to go through the post install guide**
 
 ![img](https://img.shields.io/badge/Last%20Update-June-red) ![img](https://img.shields.io/badge/macOS%20Support-Monterey--12-blue) ![img](https://img.shields.io/badge/OpenCore%20Version-0.6.8-yellow)
 
@@ -42,12 +42,12 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Monterey.
 # What works
 
 - Sleep / Wake
-- Wifi and Bluetooth (Intel 7265 or 7260 cards with Airportitlwm.kext) **(Note: the intel kexts for wifi and bluetooth come with some issues , read the post install notes for more info, new Airportitlwm Monterey kext & fixes)**
+- Wifi and Bluetooth (Intel® Dual Band Wireless-AC 7265 or 7260 cards with Airportitlwm.kext) **(Note: the intel kexts for wifi and bluetooth come with some issues, see post install notes for more info, new Airportitlwm Monterey kext & fixes)**
 - AirPort Extreme (Broadcom BCM94360CSAX & NGFF A/E Adapter) **Recommended Upgrade to get native WiFi & Bluetooth**
 - Handoff, Continuity, AirDrop
-- iMessage, FaceTime, App Store, iTunes Store (Read post install guide for more info)
+- iMessage, FaceTime, App Store, iTunes Store (see post install guide for more info)
 - Ethernet
-- Onboard audio (Use alc_fix to fix unworking jack after replug )
+- Onboard audio (see post install guide for more info)
 - USB 2.0 / USB 3.0
 - Dual Batteries
 - Touchpad
@@ -55,74 +55,99 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Monterey.
 - miniDP
 - SD Card Reader (Enable Sinetek-rtsx.kext in Config.plist because it is unstable to be left on by default)
 - HiDPI (Use [one-key-hidpi](https://github.com/xzhih/one-key-hidpi))
-- Sidecar (Wired Sidecar works but only in Macbook9,1 SMBIOS, which has bad battery life, see post install guide for more info)
+- Sidecar (see post install guide for more info)
 
 # What doesn't work
+
 - VGA
 
 ## Note: If you need to edit Config.plist, don't use OpenCore configurator or Clover configurator, use PlistEdit pro, PropperTree, or Xcode.
 
-# Installation Guide (Online Reccomended)
+# Installation Guide (Online Installer Reccomended)
 
-## macOS Monterey Offline (Only availabile for macOS as of now)
+## macOS Monterey Offline Installer (Only availabile for macOS as of now)
 
-**This is a simple and quick summary of the offline install USB creation**
+macOS Guide
 
-macOS Guide:
+1. Download [gibMacOS](https://github.com/corpnewt/gibMacOS)
+2. Right click gibMacOS.command and click open (a terminal window will launch)
+3. Type "c" to change the catalog and then type "4" to view the list of all developer betas.
+4. Select an option on the list (macOS 12.0 will likely be number 1 on the list
+5. Type in the corresponding number (gibmacOS will start to download macOS 12.0)
+6. It will download Monterey (11.78 GB) and it will place the contents in gibMacOS folder under macOS Downloads/developer/071-51840 - 12.0 macOS 12 Beta
+7. Open the InstallAssistant.pkg that will extract the installer to your Applications folder
+8. Open disk utility and format your usb as macOS Extended Journaled with a GUID partiton scheme.
+9. Open a terminal window and run this command: `sudo /Applications/Install\ macOS\ 12\ Beta.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
 
-1. Download the macOS Monterey Beta Profile [here](https://betaprofiles.com)
-2. Goto System Preferences > Software Update and click "Upgrade Now" (it will save the macOS Monterey Installer to the Applications folder)
-3. Open Disk Utility and select View > Show All Devices at the top left
-4. Select your flash drive and format it as macOS Extended Journaled with GUID Partiton
-5. Launch terminal and run the following command "sudo /Applications/Install\ macOS\ 12\ Beta.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume"
-Note: Replace "MyVolume" at the end of the command with the name of your USB partiton.
+Note: Change `MyVolume` to the name of your usb partiton
 
-6. Open terminal and run "diskutil list" then find your flash drive along with its EFI partition identifier
-7. Run "sudo diskutil mount identifier" (replace "identifier with your EFI identifier number)
-8. Download the latest EFI created [here](https://github.com/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Opencore/releases)
-9. Copy the EFI folder and paste it in your EFI partiton
+10. Open terminal and run "diskutil list" then find your flash drive along with its EFI partition identifier
+11. Run "sudo diskutil mount identifier" (replace "identifier with your EFI identifier number)
+12. Download the latest EFI created [here](https://github.com/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Opencore/releases)
+13. Copy the EFI folder and paste it in your USB partiton
 
+`Note: Make sure to apply the correct bios settings before continuing (provided above)`
 
-## macOS Big Sur Online (Reccomended)
+14. Restart your laptop and hit `F12`
+15. Select your flash drive as temporary boot option
+16. Now in the OpenCore menu select `Install macOS 12 Beta`
+Great! Now install and set up macOS Monterey as usual. When you are done be sure to read the post install guide.
 
-**This is a simple and quick summary of the online install USB creation** 
+## macOS Big Sur Online Installer (Reccomended)
+
+**This is a simple and quick summary of the online install USB creation**
+
 Windows Guide:
 
 1. Download [rufus](https://rufus.ie/en/)
 2. Select the desired flash drive you would like to put the installer on under the device option
-3. Select non-bootable as the boot selection (REQUIRED)
-4. Select FAT-32 or Large FAT-32 as the partition scheme
-5. Open up the usb partition in explorer and delete the files created by rufus
-6. Create a folder on that partiton named "com.apple.recovery.boot"
+3. Select `non-bootable` as the boot selection (REQUIRED)
+4. Select `FAT-32` or `Large FAT-32` as the partition scheme
+5. Open up the usb partition in file explorer and delete the files created by rufus
+6. Create a folder on that partiton named `com.apple.recovery.boot`
 7. Install [python](https://www.python.org/downloads/) (Make sure you select add python x.x to path)
-8. Download and extract the [opencore package](https://github.com/acidanthera/OpenCorePkg/releases)
-9. Select the macrecovery folder in the opencorepkg folder at "/Utilities/macrecovery/"
+8. Download and extract the [OpenCore Package](https://github.com/acidanthera/OpenCorePkg/releases)
+9. Select the macrecovery folder in the opencorepkg folder at `/Utilities/macrecovery/`
 10. Click on home > copy path at the top of file explorer
 11. Fire up command prompt and type cd and hit spacebar and paste the path of the macrecovery folder.
-12. Run the command "./macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000"
+12. Run the command `./macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000`
 13. This will put some files in the macrecovery folder but we only need BaseSystem.dmg and BaseSystem.chunklist
-14. Paste both of those files in the "com.apple.recovery.boot" folder in your flash drive partiton
+14. Paste both of those files in the `com.apple.recovery.boot` folder in your flash drive partiton
 15. Download the latest EFI created [here](https://github.com/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Opencore/releases)
 16. Copy the EFI folder and paste it in your USB partiton
+
+`Note: Make sure to apply the correct bios settings before continuing (provided above)`
+
+17. Restart your laptop and hit `F12`
+18. Select your flash drive as temporary boot option
+19. Now in the OpenCore menu select the name of your USB partiton
+Great! Now install and set up macOS Big Sur as usual. When you are done be sure to read the post install guide.
 
 macOS Guide:
 
 1. Launch Disk Utility
 2. Select View > Show all devices at the top left
-3. Select your flash drive and format it as MS-DOS (FAT) or FAT-32
-4. Open up your usb partiton and create a folder named "com.apple.recovery.boot"
-5. Download and extract the [opencore package](https://github.com/acidanthera/OpenCorePkg/releases)
-6. Select the macrecovery folder in the opencorepkg folder at "/Utilities/macrecovery/"
+3. Select your flash drive and format it as `MS-DOS (FAT)` or `FAT-32`
+4. Open up your usb partiton and create a folder named `com.apple.recovery.boot`
+5. Download and extract the [OpenCore Package](https://github.com/acidanthera/OpenCorePkg/releases)
+6. Select the macrecovery folder in the opencorepkg folder at `/Utilities/macrecovery/`
 7. Right click and click "New terminal at folder"
-8. Run the command "./macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000" in the terminal window
+8. Run the command `./macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000` in the terminal window
 9. This will put some files in the macrecovery folder but we only need BaseSystem.dmg and BaseSystem.chunklist
-10. Paste both of those files in the "com.apple.recovery.boot" folder in your flash drive partiton
+10. Paste both of those files in the `com.apple.recovery.boot` folder in your flash drive partiton
 11. Download the latest EFI created [here](https://github.com/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Opencore/releases)
 12. Copy the EFI folder and paste it in your USB partiton
 
+`Note: Make sure to apply the correct bios settings before continuing (provided above)`
+
+13. Restart your laptop and hit `F12`
+14. Select your flash drive as temporary boot option
+15. Now in the OpenCore menu select the name of your USB partiton
+Great! Now install and set up macOS Big Sur as usual. When you are done be sure to read the post install guide.
+
 Linux Guide:
 
-Follow this [guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html#downloading-macos) to set up the macOS Installer in linux
+Follow this [guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/linux-install.html#downloading-macos) to set up the online macOS Big Sur Installer in Linux. I haven't gotten time to write a detailed guide.
 
 The [Dortania Installation Guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/) is more detailed and you easily refer to it for more details. I haven't gotten time to write a detailed guide.
 
@@ -134,12 +159,12 @@ The [Dortania Installation Guide](https://dortania.github.io/OpenCore-Install-Gu
 Once you have verifed that your machine boots properly without any issues as described in the "What Works section", proceed to do the following
 
 ### 1. Disable Verbose mode (the black screen with logs on boot up)
-In Config.plist, navigate to NVRAM -> Add -> 7C436110-AB2A-4BBB-A880-FE41995C9F82 -> boot-args and delete the '-v' argument
+In Config.plist, navigate to NVRAM -> Add -> 7C436110-AB2A-4BBB-A880-FE41995C9F82 -> boot-args and delete the `-v` argument
 
-### 2. Disable AppleDebug and ApplePanic
-In the Config.plist, naviaget to Misc -> Debug and change both AppleDebug and ApplePanic to False (NO)
+### 2. Disable AppleDebug, ApplePanic & ShowPicker
+In the Config.plist, naviaget to Misc -> Debug and change both `AppleDebug` and `ApplePanic` to False (NO)
 
-You can also disable the boot picker screen so that you boot straight to th Apple logo by setting ShowPicker under Misc -> Boot to False (NO)
+You can also disable the boot picker screen so that you boot straight to th Apple logo by setting `ShowPicker` under Misc -> Boot to False (NO)
 
 Note: you can still see the boot picker with ShowPicker set to no/false by spamming Esc before the apple logo is displayed during boot.
 
@@ -154,16 +179,19 @@ Or you can use Airportitlwm.kext for Catalina from Intel WiFi Kexts folder and g
 
   **1. Airportitlwm.kext gives you native WiFi menu and enables location services, but often causes issues with the trackpad & trackpoint after waking from sleep (it doesn't work) on Catalina and Mojave (not Big Sur). A quick fix is to put the laptop to sleep again by closing the lid until the red sleep light starts to blink then waking the laptop again. Also it only happens when you put the laptop to sleep for a very long time (more than 2 or 3 hours). So for those who don't put their laptop to sleep for a very long time and just turn it off after use, this kext is ok to use.**
   
-  **2. The Airportitlwm.kext included in this EFI is only for Big Sur. For those in Monterey download this [Kext](https://github.com/OpenIntelWireless/itlwm/files/6613211/AirportItlwm-Monterey.kext.zip) and replace the one in EFI -> Kexts. For those in Catalina or Mojave you should download the corresponding Airportitlwm.kext from [Openintelwireless](https://github.com/OpenIntelWireless) or use the one in Intel WiFi Kexts Folder of this repo (Recommended) and replace the one in EFI -> Kexts.**
-Note: the Airportitlwm kext for macOS Monterey is very new and may have issues. Please report those issues [here](https://github.com/OpenIntelWireless/itlwm/issues). Also the macOS Monterey kext provided above may be outdated at the the you are reading this so please check [here](https://github.com/OpenIntelWireless/itlwm/releases) and check if there is a released stable kext for Monterey.
+  **2. The Airportitlwm.kext included in this EFI is for Big Sur. For those in Monterey download the corresponding kext [here](https://github.com/OpenIntelWireless/itlwm/releases) and replace the one in EFI -> Kexts. For those in Catalina or Mojave you should use the one in Intel WiFi Kexts Folder of this repo (Recommended) and replace the one in EFI -> Kexts.**
+Note: the Airportitlwm kext for macOS Monterey is very new and may have issues. Please report those issues [here](https://github.com/OpenIntelWireless/itlwm/issues).
   
  **3. Airportitlwm causes the bluetooth to be unstable and because so you may experience stutters or interruptions while using bluetooth headphones. To fix this you can turn off wifi and connect via ethernet or you can get 8x series cards to fix this or buy the recomended cards (DW1820A 00JT494 or Broadcom BCM94360CSAX)**
 
   
-### 4. Add Device Properties for Serial number and other info
+### 4. Add Device Properties for Serial number, MLB, ROM, Sytem-UUID and optionally SystemProductName.
 Follow this [guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#generate-a-new-serial) to set up serial number and the accompanying info to get iServices
 
-If you want to get wired sidecar working, in Config.plist change the string in Platforminfo > Generic> SystemProductName to "MacBook9,1" (note: this causes the battery to drain faster)
+If you want to get wired sidecar working, in Config.plist change the string in Platforminfo > Generic> SystemProductName to `MacBook9,1` (note: this causes the battery to drain faster)
 
 
 ### 5. If you are using a usb mouse with side buttons, you can spoof apple usb mouse by change the pid and vid in AnyAppleUSBMouse.kext/Info.plist and enable it in Config.plist.
+
+
+### 6. Note: When you connect headphones/earbuds via the headphone jack you will hear static noise. This is normal, it a known issue with the codec in this laptop. To fix this close the laptop lid and let it go to sleep then wake it up and plug your headphones. This will work until you turn off or reboot the computer. Then you'll have to get it to sleep again to fix the issue. There has multiple attempts to fix but there has been no luck sadly.
