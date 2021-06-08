@@ -1,4 +1,4 @@
-# Lenovo Thinkpad T450 & T450s Hackintosh Guide for Mojave, Catalina, Big Sur & Monterey with OpenCore 0.6.8
+# Lenovo Thinkpad T450 & T450s Hackintosh Guide for Mojave, Catalina, Big Sur & Monterey with OpenCore
 This repo contains the installation guide and EFI files required to get a perfectly functional Monterey, Big Sur, Catalina and Mojave hackintosh on your T450 or T450s since they share the same hardware. Everything is stable and functional as described in this Readme. 
 
 ## A few worthy mentions about this repo:
@@ -42,10 +42,10 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Monterey.
 # What works
 
 - Sleep / Wake
-- Wifi and Bluetooth (Intel 7265 or 7260 cards with Airportitlwm.kext) **Currently there are no drivers for intel cards that support macOS Monterey, if you do not have access to Ethernet or a macOS compatible card, I do not recommend updating to Monterey.** **(Note: the intel kexts for wifi and bluetooth come with some issues you may want to know about, read the post install notes down below)**
+- Wifi and Bluetooth (Intel 7265 or 7260 cards with Airportitlwm.kext) **Currently there are no drivers for intel cards that support macOS Monterey, if you do not have access to Ethernet or a macOS compatible card, I do not recommend updating to Monterey.** **(Note: the intel kexts for wifi and bluetooth come with some issues , read the post install notes for more info & solutions)**
 - AirPort Extreme (Broadcom BCM94360CSAX & NGFF A/E Adapter) **Recommended Upgrade to get native WiFi & Bluetooth**
 - Handoff, Continuity, AirDrop
-- iMessage, FaceTime, App Store, iTunes Store (Change Config.plist -> PlatformInfo -> Generic -> MLB and SystemSerialNumber)
+- iMessage, FaceTime, App Store, iTunes Store (Read post install guide for more info)
 - Ethernet
 - Onboard audio (Use alc_fix to fix unworking jack after replug )
 - USB 2.0 / USB 3.0
@@ -56,12 +56,10 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Monterey.
 - SD Card Reader (Enable Sinetek-rtsx.kext in Config.plist because it is unstable to be left on by default)
 - Use [one-key-hidpi](https://github.com/xzhih/one-key-hidpi) to enable HiDPI
 - If you are using a usb mouse with side buttons, you can spoof apple usb mouse by change the pid and vid in AnyAppleUSBMouse.kext/Info.plist and enable it in Config.plist.
+- Sidecar (Wired Sidecar works but only in Macbook9,1 SMBIOS, which has bad battery life, you can choose what you want)
 
 # What doesn't work
-
 - VGA
-- Sidecar (Wired Sidecar works but only in Macbook9,1 SMBIOS, which has bad battery life, you can choose what you want)
-- With the IntelBluetoothFirmware.kext and Airportitlwm.kext or itlwm.kext enabled Bluetooth headphones only work when you are not connected to any wifi network or turn off wifi. This is a known issue with 7265 and 7260 cards. You can get 8x series cards to fix this or buy the recomended cards (DW1820A 00JT494 or Broadcom BCM94360CSAX)
 
 ## Note: If you need to edit Config.plist, don't use OpenCore configurator or Clover configurator, use PlistEdit pro , Proppertree, or Xcode.
 
@@ -138,7 +136,7 @@ Or you can use Airportitlwm.kext for Catalina from Intel WiFi Kexts folder and g
   
   **2. The Airportitlwm.kext included in this EFI is only for Big Sur. For those in Catalina or Mojave you should download the corresponding Airportitlwm.kext from [Openintelwireless](https://github.com/OpenIntelWireless) or use the one in Intel WiFi Kexts Folder of this repo (Recommended) and replace the one in EFI -> Kexts.**
   
- **3. Airportitlwm causes the bluetooth to be unstable and because so you may experience stutters or interruptions while using bluetooth headphones.**
+ **3. Airportitlwm causes the bluetooth to be unstable and because so you may experience stutters or interruptions while using bluetooth headphones. To fix this you can turn off wifi can connect via ethernet or you can get 8x series cards to fix this or buy the recomended cards (DW1820A 00JT494 or Broadcom BCM94360CSAX)**
   
 ### 4. Add Device Properties for Serial number and other info
 Follow this [guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#generate-a-new-serial) to set up serial number and the accompanying info to get iServices
