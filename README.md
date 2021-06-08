@@ -139,7 +139,7 @@ Or you can use Airportitlwm.kext for Catalina from Intel WiFi Kexts folder and g
   **2. The Airportitlwm.kext included in this EFI is only for Big Sur. For those in Monterey download this [Kext](https://github.com/OpenIntelWireless/itlwm/files/6613211/AirportItlwm-Monterey.kext.zip) and replace the one in EFI -> Kexts. For those in Catalina or Mojave you should download the corresponding Airportitlwm.kext from [Openintelwireless](https://github.com/OpenIntelWireless) or use the one in Intel WiFi Kexts Folder of this repo (Recommended) and replace the one in EFI -> Kexts.**
 Note: the Airportitlwm kext for macOS Monterey is very new and may have issues. Please report those issues [here](https://github.com/OpenIntelWireless/itlwm/issues).
   
- **3. Airportitlwm causes the bluetooth to be unstable and because so you may experience stutters or interruptions while using bluetooth headphones. To fix this you can turn off wifi can connect via ethernet or you can get 8x series cards to fix this or buy the recomended cards (DW1820A 00JT494 or Broadcom BCM94360CSAX)**
+ **3. Airportitlwm causes the bluetooth to be unstable and because so you may experience stutters or interruptions while using bluetooth headphones. To fix this you can turn off wifi and connect via ethernet or you can get 8x series cards to fix this or buy the recomended cards (DW1820A 00JT494 or Broadcom BCM94360CSAX)**
   
 ### 4. Add Device Properties for Serial number and other info
 Follow this [guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#generate-a-new-serial) to set up serial number and the accompanying info to get iServices
