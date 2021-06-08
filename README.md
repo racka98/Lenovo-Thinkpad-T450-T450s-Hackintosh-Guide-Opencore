@@ -63,9 +63,28 @@ EFI folder and Guide for Thinkpad T450 and T450s Hackintosh Monterey.
 
 ## Note: If you need to edit Config.plist, don't use OpenCore configurator or Clover configurator, use PlistEdit pro , Proppertree, or Xcode.
 
-# Installation Guide
+# Installation Guide (Online Reccomended)
 
-## macOS Monterey
+##macOS Monterey Offline (Only availabile for macOS as of now)
+
+**This is a simple and quick summary of the offline install USB creation**
+
+macOS Guide:
+
+1. Download the macOS Monterey Beta Profile [here](https://betaprofiles.com)
+2. Goto System Preferences > Software Update and click "Upgrade Now" (it will save the macOS Monterey Installer to the Applications folder)
+3. Open Disk Utility and select View > Show All Devices at the top left
+4. Select your flash drive and format it as macOS Extended Journaled with GUID Partiton
+5. Launch terminal and run the following command "Sudo /Applications/Install\ macOS\ 12\ Beta.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume"
+Note: Replace "MyVolume" at the end of the command with the name of your USB partiton.
+
+6. Open terminal and run "diskutil list" then find your flash drive along with its EFI partition identifier
+7. Run "sudo diskutil mount identifier" (replace "identifier with your EFI identifier number)
+8. Download the latest EFI created [here](https://github.com/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Opencore/releases)
+9. Copy the EFI folder and paste it in your EFI partiton
+
+
+## macOS Big Sur Online (Reccomended)
 
 **This is a simple and quick summary of the online install USB creation** 
 Windows Guide:
@@ -84,7 +103,7 @@ Windows Guide:
 12. Run the command "./macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000"
 13. This will put some files in the macrecovery folder but we only need BaseSystem.dmg and BaseSystem.chunklist
 14. Paste both of those files in the "com.apple.recovery.boot" folder in your flash drive partiton
-15. Download the latest EFI created (https://github.com/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Opencore/releases)
+15. Download the latest EFI created [here](https://github.com/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Opencore/releases)
 16. Copy the EFI folder and paste it in your USB partiton
 
 macOS Guide:
@@ -99,7 +118,7 @@ macOS Guide:
 8. Run the command "./macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000" in the terminal window
 9. This will put some files in the macrecovery folder but we only need BaseSystem.dmg and BaseSystem.chunklist
 10. Paste both of those files in the "com.apple.recovery.boot" folder in your flash drive partiton
-11. Download the latest EFI created (https://github.com/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Opencore/releases)
+11. Download the latest EFI created [here](https://github.com/racka98/Lenovo-Thinkpad-T450-T450s-Hackintosh-Guide-Opencore/releases)
 12. Copy the EFI folder and paste it in your USB partiton
 
 Linux Guide:
