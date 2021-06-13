@@ -10,7 +10,7 @@ This repo contains the installation guide and EFI files required to get a perfec
 - **This EFI is Configured with Monterey in mind. If you are using it on Big Sur, Catalina or Mojave read the the whole guide to know where to make the necessary changes**
 - **With every EFI update you retrieve from here please remember to go through the post install guide**
 
-![img](https://img.shields.io/badge/Last%20Update-June-red) ![img](https://img.shields.io/badge/macOS%20Support-Monterey--12-blue) ![img](https://img.shields.io/badge/OpenCore%20Version-0.6.8-yellow)
+![img](https://img.shields.io/badge/Last%20Update-June-red) ![img](https://img.shields.io/badge/macOS%20Support-Monterey--12-blue) ![img](https://img.shields.io/badge/OpenCore%20Version-0.7.0-yellow)
 
 ![About macOS Monterey](https://i.imgur.com/hIZ3lkb.png)
 
@@ -93,7 +93,7 @@ Note: Change `MyVolume` to the name of your usb partiton
 16. Now in the OpenCore menu select `Install macOS 12 Beta`
 Great! Now install and set up macOS Monterey as usual. When you are done be sure to read the post install guide.
 
-## macOS Big Sur Online Installer (Reccomended)
+## macOS Big Sur Online Installer (Recomended)
 
 **This is a simple and quick summary of the online install USB creation**
 
@@ -185,13 +185,24 @@ Note: the Airportitlwm kext for macOS Monterey is very new and may have issues. 
  **3. Airportitlwm causes the bluetooth to be unstable and because so you may experience stutters or interruptions while using bluetooth headphones. To fix this you can turn off wifi and connect via ethernet or you can get 8x series cards to fix this or buy the recomended cards (DW1820A 00JT494 or Broadcom BCM94360CSAX)**
 
   
-### 4. Add Device Properties for Serial number, MLB, ROM, Sytem-UUID and optionally SystemProductName.
+### 4. Enable Caps lock indicator and additional Thinkpad features you used to get on Windows
+  Using [YogaSMC](https://github.com/zhen-zen/YogaSMC) you can gain this functionality back. Install the YogaSMC App-Release from [here](https://github.com/zhen-zen/YogaSMC/releases).
+  Install it then open it to set it up.
+  
+### 5. Enabling bluetooth toggle to be able to turn off bluetooth
+You can enable IntelBluetoothFirmware.kext & IntelBluetoothInjector.kext to be able to turn off bluetooth by enabling those kexts in config.plist
+This is not done by default because it increases boot times
+***For those on macOS Monterey do not enable these kexts because the system will not boot***
+  
+### 6. Add Device Properties for Serial number, MLB, ROM, Sytem-UUID and optionally SystemProductName.
 Follow this [guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#generate-a-new-serial) to set up serial number and the accompanying info to get iServices
 
 If you want to get wired sidecar working, in Config.plist change the string in Platforminfo > Generic> SystemProductName to `MacBook9,1` (note: this causes the battery to drain faster)
 
 
-### 5. If you are using a usb mouse with side buttons, you can spoof apple usb mouse by change the pid and vid in AnyAppleUSBMouse.kext/Info.plist and enable it in Config.plist.
+### 7. Fix USB mouse side buttons.
+If you are using a usb mouse with side buttons, you can spoof apple usb mouse by change the pid and vid in AnyAppleUSBMouse.kext/Info.plist and enable it in Config.plist.
 
 
-### 6. Note: When you connect headphones/earbuds via the headphone jack you will hear static noise. This is normal, it a known issue with the codec in this laptop. To fix this close the laptop lid and let it go to sleep then wake it up and plug your headphones. This will work until you turn off or reboot the computer. Then you'll have to get it to sleep again to fix the issue. There has multiple attempts to fix but there has been no luck sadly.
+### 8. Fixing static noise
+When you connect headphones/earbuds via the headphone jack you will hear static noise.
