@@ -7,6 +7,7 @@ This repo contains the installation guide and EFI files required to get a perfec
 - **The EFI folder and the patched ACPI were first created by [EchoEspirit](https://github.com/EchoEsprit/Hackintosh-Catalina-OpenCore-Lenovo-T450s-efi) and futher optimized by [i3p9](https://github.com/i3p9/Hackintosh-Catalina-OpenCore-Lenovo-T450s-efi). I tweaked a couple of things and fixed some errors that were happening on T450 + added Intel WiFi drivers from [Openintelwireless](https://github.com/OpenIntelWireless)**
 - **I will try my best to keep the repo updated with the latest kexts and OpenCore version**
 - **This EFI works with macOS Monterey, Big Sur, Catalina and Mojave**
+-**For macOS Monterey this EFI will not have full support since it's still in Beta so don't expect flawless functionality**
 - **This EFI is Configured with Big Sur in mind. If you are using it on Monterey, Catalina or Mojave read the the whole guide to know where to make the necessary changes**
 - **With every EFI update you retrieve from here please remember to go through the post install guide**
 
@@ -168,7 +169,7 @@ You can also disable the boot picker screen so that you boot straight to th Appl
 
 Note: you can still see the boot picker with ShowPicker set to no/false by spamming Esc before the apple logo is displayed during boot.
 
-### 3. Enable WiFi with the Intel card on Catalina and Mojave
+### 3. Enable WiFi with the Intel card on Monterey, Catalina and Mojave
 If you are on Catalina or Mojave, you can enable WiFi on the Intel card by navigating (in config.plist) to Kernel -> Add -> 20 and set Enabled to False/NO (Disabling Airportitlwm.kext) and in 21 set Enabled to True/YES (Enabling itlwm.kext). After enabling these and rebooting install Heliport App (included in Utilities).
 
 Or you can use Airportitlwm.kext for Catalina from Intel WiFi Kexts folder and get native wifi on Catalina in the expense of loosing trackpad after wake from sleep.
@@ -179,7 +180,7 @@ Or you can use Airportitlwm.kext for Catalina from Intel WiFi Kexts folder and g
 
   **1. Airportitlwm.kext gives you native WiFi menu and enables location services, but often causes issues with the trackpad & trackpoint after waking from sleep (it doesn't work) on Catalina and Mojave (not Big Sur). A quick fix is to put the laptop to sleep again by closing the lid until the red sleep light starts to blink then waking the laptop again. Also it only happens when you put the laptop to sleep for a very long time (more than 2 or 3 hours). So for those who don't put their laptop to sleep for a very long time and just turn it off after use, this kext is ok to use.**
   
-  **2. The Airportitlwm.kext included in this EFI is for Big Sur. For those in Monterey download the corresponding kext [here](https://github.com/OpenIntelWireless/itlwm/releases) and replace the one in EFI -> Kexts. For those in Catalina or Mojave you should use the one in Intel WiFi Kexts Folder of this repo (Recommended) and replace the one in EFI -> Kexts.**
+  **2. The Airportitlwm.kext included in this EFI is for Big Sur. For those in Monterey take the kext in Monterey folder inside Intel WiFi kexts and replace the one in EFI -> Kexts. For those in Catalina or Mojave you should use the one in Intel WiFi Kexts Folder of this repo (Recommended) and replace the one in EFI -> Kexts.**
 Note: the Airportitlwm kext for macOS Monterey is very new and may have issues. Please report those issues [here](https://github.com/OpenIntelWireless/itlwm/issues).
   
  **3. Airportitlwm causes the bluetooth to be unstable and because so you may experience stutters or interruptions while using bluetooth headphones. To fix this you can turn off wifi and connect via ethernet or you can get 8x series cards to fix this or buy the recomended cards (DW1820A 00JT494 or Broadcom BCM94360CSAX)**
