@@ -205,4 +205,4 @@ If you are using a usb mouse with side buttons, you can spoof apple usb mouse by
 
 
 ### 8. Fixing static noise
-When you connect headphones/earbuds via the headphone jack you will hear static noise.
+When you connect headphones/earbuds via the headphone jack you will hear static noise. To fix this install alc_fix_new located in Utilities folder of this repo.
