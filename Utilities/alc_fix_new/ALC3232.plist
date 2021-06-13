@@ -8,7 +8,7 @@
 		<key>Enabled</key>
 		<true/>
 		<key>Node ID</key>
-		<string>0x1a</string>
+		<string>0x1A</string>
 		<key>On Boot</key>
 		<true/>
 		<key>On Connect</key>
@@ -22,7 +22,7 @@
 		<key>On Unmute</key>
 		<false/>
 		<key>On Wake</key>
-		<false/>
+		<true/>
 		<key>Param</key>
 		<string>0x24</string>
 		<key>Verb</key>
