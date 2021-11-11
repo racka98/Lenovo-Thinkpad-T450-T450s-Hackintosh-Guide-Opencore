@@ -1,3 +1,9 @@
+# ********************************
+# I no longer have that laptop so unfortunately I can no longer offer support for this repo
+# This repo will archived and all open issues are closed
+# The current state of this repo is 100% compatible with macOS Big Sur & previous versions
+# ********************************
+
 # Lenovo Thinkpad T450 & T450s Hackintosh Guide for Mojave, Catalina, Big Sur & Monterey with OpenCore
 This repo contains the installation guide and EFI files required to get a perfectly functional Monterey, Big Sur, Catalina and Mojave hackintosh on your T450 or T450s since they share the same hardware. Everything is stable and functional as described in this Readme. 
 
